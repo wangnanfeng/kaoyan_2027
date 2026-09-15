@@ -4,7 +4,7 @@
 > **用法**：按目录查公式 → 回对应章节笔记看推导 → 考前两周只刷本页
 > **原则**：只收公式、条件与常用结论，不写推导和例题（推导见 `../高等数学/` 等章节笔记）
 > **免责**：本手册按数二大纲范围整理，边缘考点已单独标注；最终以当年度教育部教育考试院《数学考试大纲》原文为准
-> **排版约定**（保证 GitHub 稳定渲染）：绝对值与行列式统一写 `\lvert x\rvert`，不在 `$` 内写中文，不使用 `cases` 环境，避免公式里的竖线与 Markdown 表格冲突。
+> **排版约定**（保证 GitHub 稳定渲染）：**表格单元格内不放公式**，公式一律写进列表或独立成行；不在 `$` 内写中文；不用 `cases` 环境；绝对值/行列式直接写 `|x|`。
 
 ---
 
@@ -74,7 +74,7 @@ $$\lim u^{v} = e^{\lim v(u-1)}$$
 - **海涅定理**：$\lim\limits_{x\to x_0}f(x)=A$ 等价于对任意 $x_n \to x_0$ 都有 $f(x_n)\to A$
 - $\lim\limits_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_k^n}=\max\{a_1,\dots,a_k\}$，其中 $a_i>0$
 - $\lim\limits_{n\to\infty}\sqrt[n]{n}=1$，$\lim\limits_{n\to\infty}\sqrt[n]{a}=1$（$a>0$）
-- $\lim\limits_{x\to+\infty}\dfrac{x^{a}}{e^{x}}=0$，$\lim\limits_{x\to+\infty}\dfrac{\ln x}{x^{a}}=0$（$a>0$）
+- $\lim\limits_{x\to+\infty}\frac{x^{a}}{e^{x}}=0$，$\lim\limits_{x\to+\infty}\frac{\ln x}{x^{a}}=0$（$a>0$）
 
 **用定积分定义求和式极限**：
 
@@ -118,16 +118,15 @@ $$f'(x_0)=\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}=\lim_{x\to
 
 ### 2.2 基本导数公式
 
-| 函数 | 导数 | 函数 | 导数 |
-| --- | --- | --- | --- |
-| $C$ | $0$ | $\sin x$ | $\cos x$ |
-| $x^{\alpha}$ | $\alpha x^{\alpha-1}$ | $\cos x$ | $-\sin x$ |
-| $a^{x}$ | $a^{x}\ln a$ | $\tan x$ | $\sec^{2}x$ |
-| $e^{x}$ | $e^{x}$ | $\cot x$ | $-\csc^{2}x$ |
-| $\log_a x$ | $\dfrac{1}{x\ln a}$ | $\sec x$ | $\sec x\tan x$ |
-| $\ln x$ | $\dfrac{1}{x}$ | $\csc x$ | $-\csc x\cot x$ |
-| $\arcsin x$ | $\dfrac{1}{\sqrt{1-x^{2}}}$ | $\arccos x$ | $-\dfrac{1}{\sqrt{1-x^{2}}}$ |
-| $\arctan x$ | $\dfrac{1}{1+x^{2}}$ | $\mathrm{arccot}\,x$ | $-\dfrac{1}{1+x^{2}}$ |
+$$(C)'=0, \qquad (x^{\alpha})'=\alpha x^{\alpha-1}$$
+
+$$(a^{x})'=a^{x}\ln a, \qquad (e^{x})'=e^{x}, \qquad (\log_a x)'=\frac{1}{x\ln a}, \qquad (\ln x)'=\frac{1}{x}$$
+
+$$(\sin x)'=\cos x, \qquad (\cos x)'=-\sin x, \qquad (\tan x)'=\sec^{2}x, \qquad (\cot x)'=-\csc^{2}x$$
+
+$$(\sec x)'=\sec x\tan x, \qquad (\csc x)'=-\csc x\cot x$$
+
+$$(\arcsin x)'=\frac{1}{\sqrt{1-x^{2}}}, \qquad (\arccos x)'=-\frac{1}{\sqrt{1-x^{2}}}, \qquad (\arctan x)'=\frac{1}{1+x^{2}}, \qquad (\mathrm{arccot}\,x)'=-\frac{1}{1+x^{2}}$$
 
 ### 2.3 求导法则
 
@@ -157,17 +156,15 @@ $$[\ln(1+x)]^{(n)}=\frac{(-1)^{n-1}(n-1)!}{(1+x)^{n}}, \qquad \left(\frac{1}{x+a
 $$dy=f'(x)\,dx, \qquad f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$$
 
 - 一阶微分形式不变性：无论 $x$ 是自变量还是中间变量，$dy=f'(x)dx$ 都成立
-- 常用近似（$\lvert x\rvert$ 很小时）：$\sqrt[n]{1+x}\approx 1+\dfrac{x}{n}$，$e^{x}\approx 1+x$，$\ln(1+x)\approx x$，$\sin x\approx x$
+- 常用近似（$|x|$ 很小时）：$\sqrt[n]{1+x}\approx 1+\dfrac{x}{n}$，$e^{x}\approx 1+x$，$\ln(1+x)\approx x$，$\sin x\approx x$
 
 ### 2.6 微分中值定理
 
-| 定理 | 条件 | 结论 |
-| --- | --- | --- |
-| 费马引理 | $x_0$ 为极值点且可导 | $f'(x_0)=0$ |
-| 罗尔定理 | $[a,b]$ 连续，$(a,b)$ 可导，$f(a)=f(b)$ | 存在 $\xi$ 使 $f'(\xi)=0$ |
-| 拉格朗日 | $[a,b]$ 连续，$(a,b)$ 可导 | $f(b)-f(a)=f'(\xi)(b-a)$ |
-| 柯西 | 均连续可导且 $g'(x)\ne 0$ | $\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f'(\xi)}{g'(\xi)}$ |
-| 泰勒 | $n+1$ 阶可导 | 见下方泰勒公式 |
+- **费马引理**：$x_0$ 为极值点且可导，则 $f'(x_0)=0$
+- **罗尔定理**：$[a,b]$ 连续，$(a,b)$ 可导，$f(a)=f(b)$，则存在 $\xi$ 使 $f'(\xi)=0$
+- **拉格朗日**：$[a,b]$ 连续，$(a,b)$ 可导，则 $f(b)-f(a)=f'(\xi)(b-a)$
+- **柯西**：均连续可导且 $g'(x)\ne 0$，则 $\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f'(\xi)}{g'(\xi)}$
+- **泰勒**：$n+1$ 阶可导，见下方泰勒公式
 
 **泰勒公式（拉格朗日余项）**：
 
@@ -181,12 +178,10 @@ $$\lim\frac{f(x)}{g(x)}=\lim\frac{f'(x)}{g'(x)}$$
 
 > 仅适用于 $\dfrac{0}{0}$ 型或 $\dfrac{\infty}{\infty}$ 型；其余未定式先转化再用。
 
-| 未定式 | 处理方式 |
-| --- | --- |
-| $0\cdot\infty$ | 化为 $\dfrac{0}{1/\infty}$ 或 $\dfrac{\infty}{1/0}$ |
-| $\infty-\infty$ | 通分、有理化、提取公因子 |
-| $1^{\infty}$ | 用 $e^{\lim v(u-1)}$ |
-| $0^{0}$ 或 $\infty^{0}$ | 取对数化为 $0\cdot\infty$ |
+- $0\cdot\infty$ 型：化为 $\dfrac{0}{1/\infty}$ 或 $\dfrac{\infty}{1/0}$
+- $\infty-\infty$ 型：通分、有理化、提取公因子
+- $1^{\infty}$ 型：用 $e^{\lim v(u-1)}$
+- $0^{0}$ 型、$\infty^{0}$ 型：取对数化为 $0\cdot\infty$
 
 ### 2.8 单调性、极值、凹凸与渐近线
 
@@ -199,7 +194,7 @@ $$\lim\frac{f(x)}{g(x)}=\lim\frac{f'(x)}{g'(x)}$$
   - 水平：$\lim\limits_{x\to\infty}f(x)=A$
   - 斜：$k=\lim\limits_{x\to\infty}\dfrac{f(x)}{x}$，$b=\lim\limits_{x\to\infty}[f(x)-kx]$，渐近线为 $y=kx+b$
 
-> 曲率为数一内容，数二可跳过：$K=\dfrac{\lvert y''\rvert}{(1+y'^{2})^{3/2}}$
+> 曲率为数一内容，数二可跳过：$K=\dfrac{|y''|}{(1+y'^{2})^{3/2}}$
 
 ---
 
@@ -207,7 +202,7 @@ $$\lim\frac{f(x)}{g(x)}=\lim\frac{f'(x)}{g'(x)}$$
 
 ### 3.1 基本积分表
 
-$$\int x^{\alpha}dx=\frac{x^{\alpha+1}}{\alpha+1}+C \quad (\alpha\ne -1), \qquad \int \frac{dx}{x}=\ln\lvert x\rvert+C$$
+$$\int x^{\alpha}dx=\frac{x^{\alpha+1}}{\alpha+1}+C \quad (\alpha\ne -1), \qquad \int \frac{dx}{x}=\ln|x|+C$$
 
 $$\int a^{x}dx=\frac{a^{x}}{\ln a}+C, \qquad \int e^{x}dx=e^{x}+C$$
 
@@ -217,19 +212,17 @@ $$\int \sec^{2}x\,dx=\tan x+C, \qquad \int \csc^{2}x\,dx=-\cot x+C$$
 
 $$\int \sec x\tan x\,dx=\sec x+C, \qquad \int \csc x\cot x\,dx=-\csc x+C$$
 
-$$\int \sec x\,dx=\ln\lvert \sec x+\tan x\rvert+C, \qquad \int \csc x\,dx=\ln\lvert \csc x-\cot x\rvert+C$$
+$$\int \sec x\,dx=\ln|\sec x+\tan x|+C, \qquad \int \csc x\,dx=\ln|\csc x-\cot x|+C$$
 
-$$\int \tan x\,dx=-\ln\lvert \cos x\rvert+C, \qquad \int \cot x\,dx=\ln\lvert \sin x\rvert+C$$
+$$\int \tan x\,dx=-\ln|\cos x|+C, \qquad \int \cot x\,dx=\ln|\sin x|+C$$
 
 $$\int \frac{dx}{a^{2}+x^{2}}=\frac{1}{a}\arctan\frac{x}{a}+C$$
 
 $$\int \frac{dx}{\sqrt{a^{2}-x^{2}}}=\arcsin\frac{x}{a}+C$$
 
-$$\int \frac{dx}{x^{2}-a^{2}}=\frac{1}{2a}\ln\left\lvert\frac{x-a}{x+a}\right\rvert+C$$
+$$\int \frac{dx}{x^{2}-a^{2}}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$
 
-$$\int \frac{dx}{\sqrt{x^{2}+a^{2}}}=\ln\left(x+\sqrt{x^{2}+a^{2}}\right)+C$$
-
-$$\int \frac{dx}{\sqrt{x^{2}-a^{2}}}=\ln\left\lvert x+\sqrt{x^{2}-a^{2}}\right\rvert+C$$
+$$\int \frac{dx}{\sqrt{x^{2}+a^{2}}}=\ln\left(x+\sqrt{x^{2}+a^{2}}\right)+C, \qquad \int \frac{dx}{\sqrt{x^{2}-a^{2}}}=\ln\left|x+\sqrt{x^{2}-a^{2}}\right|+C$$
 
 $$\int \sqrt{a^{2}-x^{2}}\,dx=\frac{x}{2}\sqrt{a^{2}-x^{2}}+\frac{a^{2}}{2}\arcsin\frac{x}{a}+C$$
 
@@ -237,14 +230,11 @@ $$\int \sqrt{a^{2}-x^{2}}\,dx=\frac{x}{2}\sqrt{a^{2}-x^{2}}+\frac{a^{2}}{2}\arcs
 
 - **第一类（凑微分）**：$\int f(\varphi(x))\varphi'(x)dx=\int f(u)du$
 - **第二类（变量代换）**：
-
-| 被积函数含 | 令 |
-| --- | --- |
-| $\sqrt{a^{2}-x^{2}}$ | $x=a\sin t$ |
-| $\sqrt{a^{2}+x^{2}}$ | $x=a\tan t$ |
-| $\sqrt{x^{2}-a^{2}}$ | $x=a\sec t$ |
-| $\sqrt[n]{ax+b}$ | $t=\sqrt[n]{ax+b}$ |
-| $e^{x}$ 的有理式 | $t=e^{x}$ |
+  - 被积函数含 $\sqrt{a^{2}-x^{2}}$：令 $x=a\sin t$
+  - 被积函数含 $\sqrt{a^{2}+x^{2}}$：令 $x=a\tan t$
+  - 被积函数含 $\sqrt{x^{2}-a^{2}}$：令 $x=a\sec t$
+  - 被积函数含 $\sqrt[n]{ax+b}$：令 $t=\sqrt[n]{ax+b}$
+  - $e^{x}$ 的有理式：令 $t=e^{x}$
 
 ### 3.3 分部积分
 
@@ -271,7 +261,7 @@ $$\sin x=\frac{2t}{1+t^{2}}, \qquad \cos x=\frac{1-t^{2}}{1+t^{2}}, \qquad dx=\f
 $$\int_{a}^{b}f(x)dx=\lim_{\lambda\to 0}\sum_{i=1}^{n}f(\xi_i)\Delta x_i$$
 
 - 线性、区间可加性、保号性
-- $\left\lvert\int_a^b f\right\rvert\le\int_a^b\lvert f\rvert$
+- $\left|\int_a^b f\right|\le\int_a^b|f|$
 - **估值定理**：$m(b-a)\le\int_a^b f\le M(b-a)$
 - **积分中值定理**：$\int_a^b f=f(\xi)(b-a)$
 
@@ -293,10 +283,8 @@ $$\int_{a}^{b}f(x)dx=F(b)-F(a)$$
 
 $$\int_{0}^{\pi/2}\sin^{n}x\,dx=\int_{0}^{\pi/2}\cos^{n}x\,dx$$
 
-| $n$ | 结果 |
-| --- | --- |
-| 正偶数 | $\dfrac{n-1}{n}\cdot\dfrac{n-3}{n-2}\cdots\dfrac{1}{2}\cdot\dfrac{\pi}{2}$ |
-| 正奇数 | $\dfrac{n-1}{n}\cdot\dfrac{n-3}{n-2}\cdots\dfrac{2}{3}\cdot 1$ |
+  - 当 $n$ 为正偶数：$\dfrac{n-1}{n}\cdot\dfrac{n-3}{n-2}\cdots\dfrac{1}{2}\cdot\dfrac{\pi}{2}$
+  - 当 $n$ 为正奇数：$\dfrac{n-1}{n}\cdot\dfrac{n-3}{n-2}\cdots\dfrac{2}{3}\cdot 1$
 
 ### 4.4 反常积分
 
@@ -304,10 +292,8 @@ $$\int_{a}^{+\infty}f(x)dx=\lim_{t\to+\infty}\int_{a}^{t}f(x)dx, \qquad \int_{a}
 
 **$p$ 积分判敛**（核心结论）：
 
-| 反常积分 | 收敛条件 |
-| --- | --- |
-| $\displaystyle\int_{1}^{+\infty}\frac{dx}{x^{p}}$ | $p>1$ |
-| $\displaystyle\int_{0}^{1}\frac{dx}{x^{p}}$ | $p<1$ |
+- $\displaystyle\int_{1}^{+\infty}\frac{dx}{x^{p}}$ 收敛 $\iff p>1$
+- $\displaystyle\int_{0}^{1}\frac{dx}{x^{p}}$ 收敛 $\iff p<1$
 
 > 记忆：**无穷区间看 $p>1$，瑕点看 $p<1$**，两者互为镜像。
 
@@ -315,20 +301,18 @@ $$\int_{a}^{+\infty}f(x)dx=\lim_{t\to+\infty}\int_{a}^{t}f(x)dx, \qquad \int_{a}
 
 设平面曲线 $y=f(x)\ge 0$，$a\le x\le b$：
 
-| 量 | 公式 |
-| --- | --- |
-| 平面图形面积（直角坐标） | $A=\displaystyle\int_{a}^{b}[f(x)-g(x)]\,dx$ |
-| 面积（极坐标） | $A=\dfrac{1}{2}\displaystyle\int_{\alpha}^{\beta}r^{2}(\theta)\,d\theta$ |
-| 绕 $x$ 轴旋转体体积 | $V_x=\pi\displaystyle\int_{a}^{b}f^{2}(x)\,dx$ |
-| 绕 $y$ 轴旋转体体积（柱壳法） | $V_y=2\pi\displaystyle\int_{a}^{b}x\,\lvert f(x)\rvert\,dx$ |
-| 绕 $x$ 轴旋转曲面侧面积 | $S=2\pi\displaystyle\int_{a}^{b}\lvert f(x)\rvert\sqrt{1+f'^{2}(x)}\,dx$ |
-| 弧长（直角坐标） | $s=\displaystyle\int_{a}^{b}\sqrt{1+f'^{2}(x)}\,dx$ |
-| 弧长（参数方程） | $s=\displaystyle\int_{\alpha}^{\beta}\sqrt{x'^{2}(t)+y'^{2}(t)}\,dt$ |
-| 弧长（极坐标） | $s=\displaystyle\int_{\alpha}^{\beta}\sqrt{r^{2}(\theta)+r'^{2}(\theta)}\,d\theta$ |
-| 函数平均值 | $\bar{f}=\dfrac{1}{b-a}\displaystyle\int_{a}^{b}f(x)dx$ |
-| 变力做功 | $W=\displaystyle\int_{a}^{b}F(x)\,dx$ |
-| 水压力 | $P=\rho g\displaystyle\int_{a}^{b}h(x)\cdot l(x)\,dx$ |
-| 形心横坐标 | $\bar{x}=\dfrac{\int_a^b x f(x)dx}{\int_a^b f(x)dx}$ |
+- **平面图形面积（直角坐标）**：$A=\displaystyle\int_{a}^{b}[f(x)-g(x)]\,dx$
+- **面积（极坐标）**：$A=\dfrac{1}{2}\displaystyle\int_{\alpha}^{\beta}r^{2}(\theta)\,d\theta$
+- **绕 $x$ 轴旋转体体积**：$V_x=\pi\displaystyle\int_{a}^{b}f^{2}(x)\,dx$
+- **绕 $y$ 轴旋转体体积（柱壳法）**：$V_y=2\pi\displaystyle\int_{a}^{b}x\,|f(x)|\,dx$
+- **绕 $x$ 轴旋转曲面侧面积**：$S=2\pi\displaystyle\int_{a}^{b}|f(x)|\sqrt{1+f'^{2}(x)}\,dx$
+- **弧长（直角坐标）**：$s=\displaystyle\int_{a}^{b}\sqrt{1+f'^{2}(x)}\,dx$
+- **弧长（参数方程）**：$s=\displaystyle\int_{\alpha}^{\beta}\sqrt{x'^{2}(t)+y'^{2}(t)}\,dt$
+- **弧长（极坐标）**：$s=\displaystyle\int_{\alpha}^{\beta}\sqrt{r^{2}(\theta)+r'^{2}(\theta)}\,d\theta$
+- **函数平均值**：$\bar{f}=\dfrac{1}{b-a}\displaystyle\int_{a}^{b}f(x)dx$
+- **变力做功**：$W=\displaystyle\int_{a}^{b}F(x)\,dx$
+- **水压力**：$P=\rho g\displaystyle\int_{a}^{b}h(x)\cdot l(x)\,dx$
+- **形心横坐标**：$\bar{x}=\dfrac{\int_a^b x f(x)dx}{\int_a^b f(x)dx}$
 
 > **技巧**：旋转体体积优先比较"圆盘法"与"柱壳法"哪个积分更容易；侧面积别漏掉 $\sqrt{1+f'^2}$
 
@@ -362,11 +346,9 @@ $$\frac{\partial z}{\partial x}=-\frac{F_x}{F_z}, \qquad \frac{\partial z}{\part
 
 **无条件极值**：驻点满足 $f_x=f_y=0$，记 $A=f_{xx}$，$B=f_{xy}$，$C=f_{yy}$：
 
-| 判别式 | 结论 |
-| --- | --- |
-| $AC-B^{2}>0$ | $A>0$ 取极小值，$A<0$ 取极大值 |
-| $AC-B^{2}<0$ | 不是极值点 |
-| $AC-B^{2}=0$ | 失效，需另作判断 |
+- $AC-B^{2}>0$：$A>0$ 取极小值，$A<0$ 取极大值
+- $AC-B^{2}<0$：不是极值点
+- $AC-B^{2}=0$：失效，需另作判断
 
 **条件极值（拉格朗日乘数法）**：求 $f(x,y)$ 在约束 $\varphi(x,y)=0$ 下的极值，构造
 
@@ -422,12 +404,10 @@ $$\iint_{D}f\,d\sigma=\int_{\alpha}^{\beta}d\theta\int_{r_1(\theta)}^{r_2(\theta
 
 ### 7.2 一阶微分方程
 
-| 类型 | 形式 | 解法 |
-| --- | --- | --- |
-| 可分离变量 | $\dfrac{dy}{dx}=f(x)g(y)$ | 分离后两边积分 |
-| 齐次方程 | $\dfrac{dy}{dx}=\varphi\left(\dfrac{y}{x}\right)$ | 令 $u=\dfrac{y}{x}$，化为可分离 |
-| 一阶线性 | $y'+P(x)y=Q(x)$ | 用下方通解公式 |
-| 伯努利（拓展） | $y'+P(x)y=Q(x)y^{n}$ | 令 $z=y^{1-n}$ 化为一阶线性 |
+- **可分离变量**：$\dfrac{dy}{dx}=f(x)g(y)$，分离后两边积分
+- **齐次方程**：$\dfrac{dy}{dx}=\varphi\left(\dfrac{y}{x}\right)$，令 $u=\dfrac{y}{x}$ 化为可分离
+- **一阶线性**：$y'+P(x)y=Q(x)$，用下方通解公式
+- **伯努利（拓展）**：$y'+P(x)y=Q(x)y^{n}$，令 $z=y^{1-n}$ 化为一阶线性
 
 **一阶线性通解公式**：
 
@@ -435,32 +415,24 @@ $$y=e^{-\int P(x)dx}\left[\int Q(x)e^{\int P(x)dx}dx+C\right]$$
 
 ### 7.3 可降阶的二阶方程
 
-| 形式 | 换元 |
-| --- | --- |
-| $y''=f(x)$ | 连续两次积分 |
-| $y''=f(x,y')$ | 令 $p=y'$，则 $y''=p'$ |
-| $y''=f(y,y')$ | 令 $p=y'$，则 $y''=p\dfrac{dp}{dy}$ |
+- $y''=f(x)$：连续两次积分
+- $y''=f(x,y')$：令 $p=y'$，则 $y''=p'$
+- $y''=f(y,y')$：令 $p=y'$，则 $y''=p\dfrac{dp}{dy}$
 
 ### 7.4 二阶常系数线性方程
 
 **齐次方程** $y''+py'+qy=0$，特征方程 $r^{2}+pr+q=0$：
 
-| 根的情况 | 通解 |
-| --- | --- |
-| 两个不等实根 $r_1\ne r_2$ | $y=C_1e^{r_1x}+C_2e^{r_2x}$ |
-| 二重实根 $r$ | $y=(C_1+C_2x)e^{rx}$ |
-| 共轭复根 $\alpha\pm\beta i$ | $y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$ |
+- 两个不等实根 $r_1\ne r_2$：$y=C_1e^{r_1x}+C_2e^{r_2x}$
+- 二重实根 $r$：$y=(C_1+C_2x)e^{rx}$
+- 共轭复根 $\alpha\pm\beta i$：$y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$
 
 **非齐次方程** $y''+py'+qy=f(x)$：通解等于齐次通解加一个特解 $y^{*}$
 
-| $f(x)$ 形式 | 特解设法 | $k$ 的取法 |
-| --- | --- | --- |
-| $P_m(x)e^{\lambda x}$ | $y^{*}=x^{k}Q_m(x)e^{\lambda x}$ | $\lambda$ 是特征根的重数（0、1、2） |
-| $e^{\alpha x}[P_l(x)\cos\beta x+P_n(x)\sin\beta x]$ | $y^{*}=x^{k}e^{\alpha x}[R_m(x)\cos\beta x+S_m(x)\sin\beta x]$ | $\alpha\pm\beta i$ 是特征根取 1，否则取 0 |
+- 若 $f(x)=P_m(x)e^{\lambda x}$，特解 $y^{*}=x^{k}Q_m(x)e^{\lambda x}$，其中 $k$ 是 $\lambda$ 作为特征根的重数（0、1、2）
+- 若 $f(x)=e^{\alpha x}[P_l(x)\cos\beta x+P_n(x)\sin\beta x]$，特解 $y^{*}=x^{k}e^{\alpha x}[R_m(x)\cos\beta x+S_m(x)\sin\beta x]$，其中 $m=\max\{l,n\}$，且 $\alpha\pm\beta i$ 是特征根时 $k=1$，否则 $k=0$
 
-其中 $m=\max\{l,n\}$，$Q_m$、$R_m$、$S_m$ 为待定的 $m$ 次多项式。
-
-> **叠加原理**：若 $f=f_1+f_2$，可分别求特解再相加。
+> $Q_m$、$R_m$、$S_m$ 为待定的 $m$ 次多项式。**叠加原理**：若 $f=f_1+f_2$，可分别求特解再相加。
 
 ---
 
@@ -470,14 +442,14 @@ $$y=e^{-\int P(x)dx}\left[\int Q(x)e^{\int P(x)dx}dx+C\right]$$
 
 **基本性质**：
 
-$$\lvert A^{T}\rvert=\lvert A\rvert, \qquad \lvert kA\rvert=k^{n}\lvert A\rvert, \qquad \lvert AB\rvert=\lvert A\rvert\lvert B\rvert$$
+$$|A^{T}|=|A|, \qquad |kA|=k^{n}|A|, \qquad |AB|=|A||B|$$
 
-$$\left\lvert A^{-1}\right\rvert=\frac{1}{\lvert A\rvert}, \qquad \lvert A^{*}\rvert=\lvert A\rvert^{n-1}$$
+$$\left|A^{-1}\right|=\frac{1}{|A|}, \qquad |A^{*}|=|A|^{n-1}$$
 
 - 两行（列）互换变号；某行乘 $k$ 等于行列式乘 $k$；某行加上另一行的 $k$ 倍不变
 - 两行（列）成比例或相同则行列式为 $0$
 - 上（下）三角行列式等于对角线元素之积
-- **按行（列）展开**：$\lvert A\rvert=\sum\limits_{j=1}^{n}a_{ij}A_{ij}$，其中 $A_{ij}$ 为代数余子式
+- **按行（列）展开**：$|A|=\sum\limits_{j=1}^{n}a_{ij}A_{ij}$，其中 $A_{ij}$ 为代数余子式
 
 **范德蒙德行列式**：
 
@@ -485,7 +457,7 @@ $$\begin{vmatrix}1&1&\cdots&1\\ x_1&x_2&\cdots&x_n\\ \vdots&\vdots&&\vdots\\ x_1
 
 **分块（拉普拉斯）行列式**：
 
-$$\begin{vmatrix}A&O\\ C&B\end{vmatrix}=\lvert A\rvert\lvert B\rvert$$
+$$\begin{vmatrix}A&O\\ C&B\end{vmatrix}=|A||B|$$
 
 ### 8.2 矩阵
 
@@ -493,21 +465,19 @@ $$\begin{vmatrix}A&O\\ C&B\end{vmatrix}=\lvert A\rvert\lvert B\rvert$$
 
 $$(AB)^{T}=B^{T}A^{T}, \qquad (AB)^{-1}=B^{-1}A^{-1}, \qquad (A^{T})^{-1}=(A^{-1})^{T}$$
 
-$$(A^{*})^{-1}=(A^{-1})^{*}=\frac{A}{\lvert A\rvert}$$
+$$(A^{*})^{-1}=(A^{-1})^{*}=\frac{A}{|A|}$$
 
 > 注意：$(AB)^{*}=B^{*}A^{*}$；$(A+B)^{*}$ 不等于 $A^{*}+B^{*}$；$AB=O$ 推不出 $A=O$ 或 $B=O$
 
 **伴随矩阵**：
 
-$$AA^{*}=A^{*}A=\lvert A\rvert E, \qquad A^{-1}=\frac{A^{*}}{\lvert A\rvert} \quad (\lvert A\rvert\ne 0)$$
+$$AA^{*}=A^{*}A=|A|E, \qquad A^{-1}=\frac{A^{*}}{|A|} \quad (|A|\ne 0)$$
 
 伴随矩阵的秩：
 
-| 条件 | $r(A^{*})$ |
-| --- | --- |
-| $r(A)=n$ | $n$ |
-| $r(A)=n-1$ | $1$ |
-| $r(A)<n-1$ | $0$ |
+- 当 $r(A)=n$ 时，$r(A^{*})=n$
+- 当 $r(A)=n-1$ 时，$r(A^{*})=1$
+- 当 $r(A)<n-1$ 时，$r(A^{*})=0$
 
 **秩的不等式**：
 
@@ -515,7 +485,7 @@ $$r(A+B)\le r(A)+r(B), \qquad r(AB)\le \min\{r(A),r(B)\}, \qquad r(AB)\ge r(A)+r
 
 - $A$ 可逆时 $r(AB)=r(B)$（左乘、右乘可逆矩阵秩不变）
 - 初等变换不改变秩；初等矩阵左乘相当于行变换，右乘相当于列变换
-- $n$ 阶矩阵 $A$ 可逆等价于 $r(A)=n$，也等价于 $\lvert A\rvert\ne 0$，也等价于特征值全不为 $0$
+- $n$ 阶矩阵 $A$ 可逆等价于 $r(A)=n$，也等价于 $|A|\ne 0$，也等价于特征值全不为 $0$
 
 ### 8.3 向量与线性方程组
 
@@ -529,33 +499,31 @@ $$\beta_1=\alpha_1, \qquad \beta_k=\alpha_k-\sum_{i=1}^{k-1}\frac{(\alpha_k,\bet
 
 再对每个 $\beta_k$ 单位化即得标准正交组。
 
-- **正交矩阵**：$A^{T}A=E$，$\lvert A\rvert=\pm 1$，特征值只能是 $\pm 1$
+- **正交矩阵**：$A^{T}A=E$，$|A|=\pm 1$，特征值只能是 $\pm 1$
 
 **解的判定**（$A$ 为 $m\times n$ 矩阵）：
 
-| 方程组 | 条件 | 结论 |
-| --- | --- | --- |
-| $Ax=0$ | $r(A)=n$ | 只有零解 |
-| $Ax=0$ | $r(A)<n$ | 有非零解，基础解系含 $n-r(A)$ 个向量 |
-| $Ax=b$ | $r(A)<r(A\mid b)$ | 无解 |
-| $Ax=b$ | $r(A)=r(A\mid b)=n$ | 唯一解 |
-| $Ax=b$ | $r(A)=r(A\mid b)<n$ | 无穷多解 |
+- $Ax=0$ 只有零解：$r(A)=n$
+- $Ax=0$ 有非零解（基础解系含 $n-r(A)$ 个向量）：$r(A)<n$
+- $Ax=b$ 无解：$r(A)<r(A\mid b)$
+- $Ax=b$ 唯一解：$r(A)=r(A\mid b)=n$
+- $Ax=b$ 无穷多解：$r(A)=r(A\mid b)<n$
 
 **解的结构**：$Ax=b$ 的通解等于一个特解加 $Ax=0$ 的通解；$Ax=0$ 的任一解都是基础解系的线性组合。
 
 ### 8.4 特征值与特征向量
 
-$$A\alpha=\lambda\alpha \quad (\alpha\ne 0), \qquad \lvert\lambda E-A\rvert=0$$
+$$A\alpha=\lambda\alpha \quad (\alpha\ne 0), \qquad |\lambda E-A|=0$$
 
 **常用性质**：
 
-$$\sum_{i=1}^{n}\lambda_i=\mathrm{tr}(A), \qquad \prod_{i=1}^{n}\lambda_i=\lvert A\rvert$$
+$$\sum_{i=1}^{n}\lambda_i=\mathrm{tr}(A), \qquad \prod_{i=1}^{n}\lambda_i=|A|$$
 
-| $A$ 的特征值 $\lambda$ | 相关矩阵的特征值 |
-| --- | --- |
-| $\lambda$ | $kA$ 为 $k\lambda$；$A^{m}$ 为 $\lambda^{m}$；$f(A)$ 为 $f(\lambda)$ |
-| $\lambda$ | $A^{-1}$ 为 $\dfrac{1}{\lambda}$；$A^{*}$ 为 $\dfrac{\lvert A\rvert}{\lambda}$ |
-| $\lambda$ | $A^{T}$ 与 $A$ 特征值相同 |
+设 $\lambda$ 为 $A$ 的特征值：
+
+- $kA$ 的特征值为 $k\lambda$；$A^{m}$ 的特征值为 $\lambda^{m}$；$f(A)$ 的特征值为 $f(\lambda)$
+- $A^{-1}$ 的特征值为 $\dfrac{1}{\lambda}$；$A^{*}$ 的特征值为 $\dfrac{|A|}{\lambda}$
+- $A^{T}$ 与 $A$ 特征值相同
 
 - 不同特征值对应的特征向量线性无关
 - **可对角化**等价于有 $n$ 个线性无关的特征向量，也等价于每个特征值的几何重数等于代数重数
@@ -583,19 +551,17 @@ $$f(x_1,\dots,x_n)=x^{T}Ax, \qquad A^{T}=A$$
 
 ## 九、高频易错速查
 
-| 易错点 | 正确做法 |
-| --- | --- |
-| 加减结构里用等价无穷小替换 | 改用泰勒展开到足够阶 |
-| 洛必达前不验证类型 | 先判断是否为 $\dfrac{0}{0}$ 或 $\dfrac{\infty}{\infty}$ 型 |
-| 用求导公式代替分段点处的定义求导 | 分界点一律用定义求左右导数 |
-| 积分漏绝对值 | $\int \frac{1}{x}dx=\ln\lvert x\rvert+C$，含对数都要加绝对值 |
-| 极坐标下丢 $r$ | $d\sigma=r\,dr\,d\theta$ |
-| 二重积分直接硬算 | 先看对称性与奇偶性，再看能否交换次序 |
-| 二阶非齐次特解漏乘 $x^{k}$ | 先看 $\lambda$ 是否为特征根及其重数 |
-| 分离变量丢常数解 | 检查 $g(y)=0$ 的情形 |
-| 混淆 $\lvert A+B\rvert$ 与 $\lvert A\rvert+\lvert B\rvert$ | 行列式对加法不满足线性 |
-| 忘记伴随矩阵秩的分段结论 | 按 $r(A)=n$、$n-1$、小于 $n-1$ 三种情况讨论 |
-| 判断可对角化只看特征值个数 | 要看几何重数是否等于代数重数 |
+- **加减结构里用等价无穷小替换** → 改用泰勒展开到足够阶
+- **洛必达前不验证类型** → 先判断是否为 $\dfrac{0}{0}$ 或 $\dfrac{\infty}{\infty}$ 型
+- **用求导公式代替分段点处的定义求导** → 分界点一律用定义求左右导数
+- **积分漏绝对值** → $\int \frac{1}{x}dx=\ln|x|+C$，含对数都要加绝对值
+- **极坐标下丢 $r$** → 牢记 $d\sigma=r\,dr\,d\theta$
+- **二重积分直接硬算** → 先看对称性与奇偶性，再看能否交换次序
+- **二阶非齐次特解漏乘 $x^{k}$** → 先看 $\lambda$ 是否为特征根及其重数
+- **分离变量丢常数解** → 检查 $g(y)=0$ 的情形
+- **混淆 $|A+B|$ 与 $|A|+|B|$** → 行列式对加法不满足线性
+- **忘记伴随矩阵秩的分段结论** → 按 $r(A)=n$、$n-1$、小于 $n-1$ 三种情况讨论
+- **判断可对角化只看特征值个数** → 要看几何重数是否等于代数重数
 
 ---
 
