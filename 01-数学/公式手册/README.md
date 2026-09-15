@@ -6,7 +6,7 @@
 > **原则**：只收公式、条件与常用结论，不写推导和例题（推导见 `../高等数学/` 等章节笔记）
 > **免责**：本手册按数二大纲范围整理，边缘考点已单独标注；最终以当年度教育部教育考试院《数学考试大纲》原文为准
 > **排版约定**（保证 GitHub 稳定渲染）：**表格单元格内不放公式**，公式一律写进列表或独立成行；不在 `$` 内写中文；不用 `cases` 环境；绝对值/行列式直接写 `|x|`。
-=======
+
 
 
 ---
@@ -75,7 +75,7 @@
 
 ### 1.1 常用等价无穷小 $(x \to 0)$
 
-=======
+
 一、函数、极限与连续
 1.1 常用等价无穷小 $`(x \to 0)`$
 
@@ -131,7 +131,7 @@ $$\tan x = x+\frac{x^{3}}{3}+\frac{2x^{5}}{15}+o(x^{5}), \qquad \arctan x = x-\f
 - 连续：$`\lim_{x\to x_0}f(x)=f(x_0)`$，等价于左连续且右连续
 - 间断点分类：
         
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
   - 第一类：左右极限都存在 —— 可去间断点（左极限＝右极限≠函数值）、跳跃间断点（左极限≠右极限）
   - 第二类：左右极限至少一个不存在 —— 无穷间断点、振荡间断点
 - 闭区间连续函数的四条性质：有界性、最值性、介值性、零点存在性
@@ -167,7 +167,7 @@ $$(\sin x)'=\cos x, \qquad (\cos x)'=-\sin x, \qquad (\tan x)'=\sec^{2}x, \qquad
 $$(\sec x)'=\sec x\tan x, \qquad (\csc x)'=-\csc x\cot x$$
 $$(\arcsin x)'=\frac{1}{\sqrt{1-x^{2}}}, \qquad (\arccos x)'=-\frac{1}{\sqrt{1-x^{2}}}, \qquad (\arctan x)'=\frac{1}{1+x^{2}}, \qquad (\mathrm{arccot}\,x)'=-\frac{1}{1+x^{2}}$$
 2.3 求导法则
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
 $$(uv)'=u'v+uv', \qquad \left(\frac{u}{v}\right)'=\frac{u'v-uv'}{v^{2}}$$
 - 复合：$`[f(g(x))]'=f'(g(x))\cdot g'(x)`$
 - 反函数：$`[f^{-1}(y)]'=\frac{1}{f'(x)}`$
@@ -198,7 +198,7 @@ $$dy=f'(x)\,dx, \qquad f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$$
 
 **泰勒公式（拉格朗日余项）**：
 
-=======
+
 - 一阶微分形式不变性：无论 $x$ 是自变量还是中间变量，$`dy=f'(x)dx`$ 都成立
 - 常用近似（$`|x|`$ 很小时）：$`\sqrt[n]{1+x}\approx 1+\frac{x}{n}`$，$`e^{x}\approx 1+x`$，$`\ln(1+x)\approx x`$，$`\sin x\approx x`$
 2.6 微分中值定理
@@ -208,7 +208,7 @@ $$dy=f'(x)\,dx, \qquad f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x$$
 - 柯西：均连续可导且 $`g'(x)\ne 0`$，则 $`\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}`$
 - 泰勒：$n+1$ 阶可导，见下方泰勒公式
 泰勒公式（拉格朗日余项）：
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
 $$f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^{k}+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}$$
 证明题套路：结论含 $`f'(\xi)`$ 时构造辅助函数用罗尔定理；含两个中值点时用拉格朗日或柯西分区间；含高阶导时用泰勒在端点或中点展开。
 2.7 洛必达法则与未定式
@@ -243,7 +243,7 @@ $$\lim\frac{f(x)}{g(x)}=\lim\frac{f'(x)}{g'(x)}$$
 
 $$\int x^{\alpha}dx=\frac{x^{\alpha+1}}{\alpha+1}+C \quad (\alpha\ne -1), \qquad \int \frac{dx}{x}=\ln|x|+C$$
 
-=======
+
 仅适用于 $`\frac{0}{0}`$ 型或 $`\frac{\infty}{\infty}`$ 型；其余未定式先转化再用。
 - $`0\cdot\infty`$ 型：化为 $`\frac{0}{1/\infty}`$ 或 $`\frac{\infty}{1/0}`$
 - $`\infty-\infty`$ 型：通分、有理化、提取公因子
@@ -265,7 +265,7 @@ $$\int x^{\alpha}dx=\frac{x^{\alpha+1}}{\alpha+1}+C \quad (\alpha\ne -1), \qquad
 三、不定积分
 3.1 基本积分表
 $$\int x^{\alpha}dx=\frac{x^{\alpha+1}}{\alpha+1}+C \quad (\alpha\ne -1), \qquad \int \frac{dx}{x}=\ln|x|+C$$
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
 $$\int a^{x}dx=\frac{a^{x}}{\ln a}+C, \qquad \int e^{x}dx=e^{x}+C$$
 $$\int \sin x\,dx=-\cos x+C, \qquad \int \cos x\,dx=\sin x+C$$
 $$\int \sec^{2}x\,dx=\tan x+C, \qquad \int \csc^{2}x\,dx=-\cot x+C$$
@@ -276,10 +276,10 @@ $$\int \sec x\,dx=\ln|\sec x+\tan x|+C, \qquad \int \csc x\,dx=\ln|\csc x-\cot x
 
 $$\int \tan x\,dx=-\ln|\cos x|+C, \qquad \int \cot x\,dx=\ln|\sin x|+C$$
 
-=======
+
 $$\int \sec x\,dx=\ln|\sec x+\tan x|+C, \qquad \int \csc x\,dx=\ln|\csc x-\cot x|+C$$
 $$\int \tan x\,dx=-\ln|\cos x|+C, \qquad \int \cot x\,dx=\ln|\sin x|+C$$
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
 $$\int \frac{dx}{a^{2}+x^{2}}=\frac{1}{a}\arctan\frac{x}{a}+C$$
 $$\int \frac{dx}{\sqrt{a^{2}-x^{2}}}=\arcsin\frac{x}{a}+C$$
 <<<<<<< HEAD
@@ -302,7 +302,7 @@ $$\int \sqrt{a^{2}-x^{2}}\,dx=\frac{x}{2}\sqrt{a^{2}-x^{2}}+\frac{a^{2}}{2}\arcs
 
 ### 3.3 分部积分
 
-=======
+
 $$\int \frac{dx}{x^{2}-a^{2}}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$
 $$\int \frac{dx}{\sqrt{x^{2}+a^{2}}}=\ln\left(x+\sqrt{x^{2}+a^{2}}\right)+C, \qquad \int \frac{dx}{\sqrt{x^{2}-a^{2}}}=\ln\left|x+\sqrt{x^{2}-a^{2}}\right|+C$$
 $$\int \sqrt{a^{2}-x^{2}}\,dx=\frac{x}{2}\sqrt{a^{2}-x^{2}}+\frac{a^{2}}{2}\arcsin\frac{x}{a}+C$$
@@ -316,7 +316,7 @@ $$\int \sqrt{a^{2}-x^{2}}\,dx=\frac{x}{2}\sqrt{a^{2}-x^{2}}+\frac{a^{2}}{2}\arcs
   - 被积函数含 $`\sqrt[n]{ax+b}`$：令 $`t=\sqrt[n]{ax+b}`$
   - $e^{x}$ 的有理式：令 $`t=e^{x}`$
 3.3 分部积分
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
 $$\int u\,dv=uv-\int v\,du$$
 选 $u$ 的口诀：反 · 对 · 幂 · 指 · 三（反三角、对数、幂函数、指数、三角，排在前的取作 $u$）
 3.4 有理函数与三角有理式
@@ -340,12 +340,12 @@ $$\int_{a}^{b}f(x)dx=\lim_{\lambda\to 0}\sum_{i=1}^{n}f(\xi_i)\Delta x_i$$
 
 ### 4.2 变限积分与牛顿-莱布尼茨
 
-=======
+
 - $`\left|\int_a^b f\right|\le\int_a^b|f|`$
 - 估值定理：$`m(b-a)\le\int_a^b f\le M(b-a)`$
 - 积分中值定理：$`\int_a^b f=f(\xi)(b-a)`$
 4.2 变限积分与牛顿-莱布尼茨
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
 $$\left(\int_{a}^{x}f(t)dt\right)'=f(x), \qquad \left(\int_{a}^{\varphi(x)}f(t)dt\right)'=f(\varphi(x))\varphi'(x)$$
 $$\left(\int_{\psi(x)}^{\varphi(x)}f(t)dt\right)'=f(\varphi(x))\varphi'(x)-f(\psi(x))\psi'(x)$$
 $$\int_{a}^{b}f(x)dx=F(b)-F(a)$$
@@ -390,7 +390,7 @@ $$\int_{a}^{+\infty}f(x)dx=\lim_{t\to+\infty}\int_{a}^{t}f(x)dx, \qquad \int_{a}
 - **形心横坐标**：$\bar{x}=\dfrac{\int_a^b x f(x)dx}{\int_a^b f(x)dx}$
 
 > **技巧**：旋转体体积优先比较"圆盘法"与"柱壳法"哪个积分更容易；侧面积别漏掉 $\sqrt{1+f'^2}$
-=======
+
 当 $n$ 为正偶数：$`\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdots\frac{1}{2}\cdot\frac{\pi}{2}`$
 当 $n$ 为正奇数：$`\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdots\frac{2}{3}\cdot 1`$
 4.4 反常积分
@@ -414,7 +414,7 @@ $p$ 积分判敛（核心结论）：
 - 水压力：$`P=\rho g\int_{a}^{b}h(x)\cdot l(x)\,dx`$
 - 形心横坐标：$`\bar{x}=\frac{\int_a^b x f(x)dx}{\int_a^b f(x)dx}`$
 技巧：旋转体体积优先比较"圆盘法"与"柱壳法"哪个积分更容易；侧面积别漏掉 $`\sqrt{1+f'^2}`$
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
 
 ---
 五、多元函数微分学
@@ -442,14 +442,14 @@ $$\frac{\partial z}{\partial x}=-\frac{F_x}{F_z}, \qquad \frac{\partial z}{\part
 
 **条件极值（拉格朗日乘数法）**：求 $f(x,y)$ 在约束 $\varphi(x,y)=0$ 下的极值，构造
 
-=======
+
 5.3 极值与最值
 无条件极值：驻点满足 $`f_x=f_y=0`$，记 $`A=f_{xx}`$，$`B=f_{xy}`$，$`C=f_{yy}`$：
 - $`AC-B^{2}>0`$：$`A>0`$ 取极小值，$`A<0`$ 取极大值
 - $`AC-B^{2}<0`$：不是极值点
 - $`AC-B^{2}=0`$：失效，需另作判断
 条件极值（拉格朗日乘数法）：求 $`f(x,y)`$ 在约束 $`\varphi(x,y)=0`$ 下的极值，构造
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
 $$L(x,y,\lambda)=f(x,y)+\lambda\varphi(x,y)$$
 令 $`L_x=L_y=L_\lambda=0`$ 解出候选点。
 有界闭区域上求最值：区域内部驻点与边界上的最值逐一代入比较。
@@ -645,7 +645,7 @@ $$f(x_1,\dots,x_n)=x^{T}Ax, \qquad A^{T}=A$$
 ---
 
 > **维护提醒**：本页随复习推进持续补充。新增专题（如"中值定理证明套路""二重积分技巧"）可另建 `主题名.md`，并用相对路径链接回本手册。
-=======
+
 - 初始条件用于确定特解；分离变量时注意 $`g(y)=0`$ 的常数解
 7.2 一阶微分方程
 - 可分离变量：$`\frac{dy}{dx}=f(x)g(y)`$，分离后两边积分
@@ -664,4 +664,4 @@ $$y=e^{-\int P(x)dx}\left[\int Q(x)e^{\int P(x)dx}dx+C\right]$$
 - 二重实根 $r$：$`y=(C_1+C_2x)e^{rx}`$
 - 共轭复根 $`\alpha\pm\beta i`$：$`y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)`$
 非齐次方程 $`y''+py'+qy=f(x)`$：通解等于齐次通解加一个特解 $`
->>>>>>> 64eae63 (数学/公式手册: 彻底修复公式渲染——表格内不再放公式)
+
