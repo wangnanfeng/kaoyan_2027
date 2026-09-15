@@ -47,7 +47,7 @@
 
 ## 一、函数、极限与连续
 
-### 1.1 常用等价无穷小（$x \to 0$）
+### 1.1 常用等价无穷小 $(x \to 0)$
 
 $$x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim \ln(1+x) \sim e^{x}-1$$
 
@@ -71,10 +71,10 @@ $$\lim u^{v} = e^{\lim v(u-1)}$$
 
 - **夹逼准则**：$g \le f \le h$ 且 $\lim g = \lim h = A$，则 $\lim f = A$
 - **单调有界准则**：单调有界数列必收敛（数列极限证明题的固定套路）
-- **海涅定理**：$\lim\limits_{x\to x_0}f(x)=A$ 等价于对任意 $x_n \to x_0$ 都有 $f(x_n)\to A$
-- $\lim\limits_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_k^n}=\max\{a_1,\dots,a_k\}$，其中 $a_i>0$
-- $\lim\limits_{n\to\infty}\sqrt[n]{n}=1$，$\lim\limits_{n\to\infty}\sqrt[n]{a}=1$（$a>0$）
-- $\lim\limits_{x\to+\infty}\frac{x^{a}}{e^{x}}=0$，$\lim\limits_{x\to+\infty}\frac{\ln x}{x^{a}}=0$（$a>0$）
+- **海涅定理**：$`\lim_{x\to x_0}f(x)=A`$ 等价于对任意 $`x_n \to x_0`$ 都有 $`f(x_n)\to A`$
+- $\lim_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_k^n}=\max\{a_1,\dots,a_k\}$，其中 $a_i>0$
+- $`\lim_{n\to\infty}\sqrt[n]{n}=1`$，$`\lim_{n\to\infty}\sqrt[n]{a}=1`$（$`a>0`$）
+- $`\lim_{x\to+\infty}\frac{x^{a}}{e^{x}}=0`$，$`\lim_{x\to+\infty}\frac{\ln x}{x^{a}}=0`$（$`a>0`$）
 
 **用定积分定义求和式极限**：
 
@@ -98,7 +98,7 @@ $$\tan x = x+\frac{x^{3}}{3}+\frac{2x^{5}}{15}+o(x^{5}), \qquad \arctan x = x-\f
 
 ### 1.5 连续与间断点
 
-- **连续**：$\lim\limits_{x\to x_0}f(x)=f(x_0)$，等价于左连续且右连续
+- **连续**：$`\lim_{x\to x_0}f(x)=f(x_0)`$，等价于左连续且右连续
 - **间断点分类**：
   - 第一类：左右极限都存在 —— 可去间断点（左极限＝右极限≠函数值）、跳跃间断点（左极限≠右极限）
   - 第二类：左右极限至少一个不存在 —— 无穷间断点、振荡间断点
